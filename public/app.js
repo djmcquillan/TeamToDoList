@@ -1,24 +1,44 @@
-console.log(jQuery);
+var xBox = $('.glyphicon-remove')
+var star = $('.glyphicon-star')
+var checkboxes = $('.checkboxes')
 
-$('.glyphicon-star').click(function(){
-    ($(this).toggleClass('starClick'))
-    console.log(this);
+xBox.each(function(){
+  var xBox = $('.glyphicon-remove')
+  xBox.click(function(){
+    $(this).parent().remove();
+  });
+})
+
+star.click(function(){
+    $(this).toggleClass('active');
 });
 
-
-$('input[type="checkbox"]').click(function(){
-    ($(this).parent().toggleClass('strikethrough'));
-    console.log('check');
-});
-
-$('.glyphicon-remove').click(function(){
-    ($(this).parent().remove());
-});
+checkboxes.click(function(){
+    $(this).next().next().toggleClass('strikethrough');
+})
 
 $('.btn').click(function(){
-    console.log('btn click');
-    console.log($('.form-input').val());
-});
+  var text = $('#todo').val()
+  $('.list').last().append($('<p><input type="checkbox" class="checkboxes"><i class="glyphicon glyphicon-star"></i><span>' + text + '</span><i class="glyphicon glyphicon-remove" id="x1"></i></p>'));
+  $('#todo').val('');
 
-//var $newdiv1 = $("<p>"
-$( "<p/ >" ).append( "<strong>Hello</strong>" );
+  var newxBox = $('.glyphicon-remove').last()
+  var newstar = $('.glyphicon-star').last()
+  var newcheckboxes = $('.checkboxes').last()
+
+  newxBox.each(function(){
+    newxBox = $('.glyphicon-remove')
+    newxBox.click(function(){
+      $(this).parent().remove();
+    });
+  });
+
+  newstar.click(function(){
+      $(this).toggleClass('active');
+  });
+
+  newcheckboxes.click(function(){
+      $(this).next().next().toggleClass('strikethrough');
+  });
+  event.preventDefault();
+});
