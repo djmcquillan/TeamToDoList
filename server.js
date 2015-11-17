@@ -4,7 +4,7 @@ var logger      = require('morgan')
 var bodyParser  = require('body-parser')
 var mongoose    = require('mongoose')
 var port        = process.env.PORT || 3000
-var todoRoutes  = require('/routes/routes')
+var todoRoutes  = require('./routes/routes')
 
 ////////////////
 //MIDDLEWARE

@@ -1,6 +1,6 @@
 var express         = require('express'),
     todoRoutes      = express.Router(),
-    todoController  = require('../controller/todo_controller.js')
+    todoController  = require('../controllers/todo_controller.js')
 
 /////////////////////////
 // create routes for /api
