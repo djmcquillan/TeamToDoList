@@ -4,9 +4,9 @@ var express         = require('express'),
 
 /////////////////////////
 // create routes for /api
-todoRoutes.route('/api')
+todoRoutes.route('/todos')
   .get(todoController.index)
   .post(todoController.create)
-  .delete(todoController.destroy)
+  // .delete(todoController.destroy)
 
   module.exports = todoRoutes
