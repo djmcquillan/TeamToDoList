@@ -66,6 +66,10 @@ form.form {
   width: 560px;
 }
 
+.strikethrough{
+  text-decoration: line-through;;
+}
+
 .form input {
   background: rgba(228,228,228,.95);
   border: none;
@@ -102,12 +106,4 @@ form.form {
 .form button:hover {
   background: rgba(0,129,255,0.95);
   cursor: pointer;
-}
-
-.active {
-  color: #ffcc00;
-}
-
-.strikethrough {
-  text-decoration: line-through;
 }

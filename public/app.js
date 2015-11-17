@@ -1,39 +1,44 @@
-console.log("Script Started");
-var $exes = $('.glyphicon-remove')
-var $stars = $('.glyphicon-star')
-var $checkboxes = $('.checkboxes')
-var $span = $('span')
-var $paras = $('p')
-var text = $('#todo')
-​
-function removeDiv() {
-  $(this).parent().hide('slow');
-}
-$exes.click(removeDiv);
-​
-function colorStar(){
-  $(this).toggleClass('active');
-}
-$stars.click(colorStar);
-​
-function strikethrough(){
-  $(this).next().next().toggleClass('strikethrough');
-}
-$checkboxes.click(strikethrough);
-​
-$('.btn').click(function(){
-  text = $('#todo')
-  $('.list').last().append('<p><input type="checkbox" class="checkboxes"><i class="glyphicon glyphicon-star"></i><span>'+ text.val() +'</span><i class="glyphicon glyphicon-remove"></i></p>');
-  text.val('');
-  $('p').last().hide();
-  $('p').last().show('slow');
-  event.preventDefault();
-  $exes = $('.glyphicon-remove')
-  $star = $('.glyphicon-star')
-  $checkboxes = $('.checkboxes')
-  $span = $('span')
-  $paras = $('p')
-  $exes.click(removeDiv);
-  $stars.click(colorStar);
-  $checkboxes.click(strikethrough);
+var xBox = $('.glyphicon-remove')
+var star = $('.glyphicon-star')
+var checkboxes = $('.checkboxes')
+
+xBox.each(function(){
+  var xBox = $('.glyphicon-remove')
+  xBox.click(function(){
+    $(this).parent().remove();
+  });
 })
+
+star.click(function(){
+    $(this).toggleClass('active');
+});
+
+checkboxes.click(function(){
+    $(this).next().next().toggleClass('strikethrough');
+})
+
+$('.btn').click(function(){
+  var text = $('#todo').val()
+  $('.list').last().append($('<p><input type="checkbox" class="checkboxes"><i class="glyphicon glyphicon-star"></i><span>' + text + '</span><i class="glyphicon glyphicon-remove" id="x1"></i></p>'));
+  $('#todo').val('');
+
+  var newxBox = $('.glyphicon-remove').last()
+  var newstar = $('.glyphicon-star').last()
+  var newcheckboxes = $('.checkboxes').last()
+
+  newxBox.each(function(){
+    newxBox = $('.glyphicon-remove')
+    newxBox.click(function(){
+      $(this).parent().remove();
+    });
+  });
+
+  newstar.click(function(){
+      $(this).toggleClass('active');
+  });
+
+  newcheckboxes.click(function(){
+      $(this).next().next().toggleClass('strikethrough');
+  });
+  event.preventDefault();
+});
