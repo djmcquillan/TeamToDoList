@@ -63,29 +63,3 @@ $('.btn').on('click', function(evt){
       }
     })
 })
-
-$('.btn').click(function(){
-  var list_item = $('#todo').val()
-  $('.list').last().append($('<p><input type="checkbox" class="checkboxes"><i class="glyphicon glyphicon-star"></i><span>' + list_item + '</span><i class="glyphicon glyphicon-remove" id="x1"></i></p>'));
-  $('#todo').val('');
-
-  var newxBox = $('.glyphicon-remove').last()
-  var newstar = $('.glyphicon-star').last()
-  var newcheckboxes = $('.checkboxes').last()
-
-  newxBox.each(function(){
-    newxBox = $('.glyphicon-remove')
-    newxBox.click(function(){
-      $(this).parent().remove();
-    });
-  });
-
-  newstar.click(function(){
-      $(this).toggleClass('active');
-  });
-
-  newcheckboxes.click(function(){
-      $(this).next().next().toggleClass('strikethrough');
-  });
-  event.preventDefault();
-});
