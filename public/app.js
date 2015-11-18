@@ -17,9 +17,23 @@ checkboxes.click(function(){
     $(this).next().next().toggleClass('strikethrough');
 })
 
+$('.btn').on('click', function(evt){
+    var list_item = $('#todo').val()
+    $.ajax({
+      url: '/api/todos',
+      method: 'POST',
+      data: {list_item: list_item},
+      dataType: 'application/json',
+      success: function(data){
+        console.log(data)
+      }
+    })
+})
+
+
 $('.btn').click(function(){
-  var text = $('#todo').val()
-  $('.list').last().append($('<p><input type="checkbox" class="checkboxes"><i class="glyphicon glyphicon-star"></i><span>' + text + '</span><i class="glyphicon glyphicon-remove" id="x1"></i></p>'));
+  var list_item = $('#todo').val()
+  $('.list').last().append($('<p><input type="checkbox" class="checkboxes"><i class="glyphicon glyphicon-star"></i><span>' + list_item + '</span><i class="glyphicon glyphicon-remove" id="x1"></i></p>'));
   $('#todo').val('');
 
   var newxBox = $('.glyphicon-remove').last()
